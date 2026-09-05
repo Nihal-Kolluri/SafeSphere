@@ -1,0 +1,249 @@
+:root {
+  --bg-dark: #0f1115;
+  --panel-bg: #181b22;
+  --card-bg: #212631;
+  --border-color: #2e3545;
+  --danger-red: #ff3344;
+  --warning-amber: #ffaa00;
+  --safe-green: #00e676;
+  --text-primary: #f0f3f8;
+  --text-muted: #8c96a8;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-primary);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.rescue-header {
+  background-color: var(--panel-bg);
+  border-bottom: 2px solid var(--border-color);
+  padding: 12px 24px;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.logo-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.pulsing-beacon {
+  width: 14px;
+  height: 14px;
+  background-color: var(--danger-red);
+  border-radius: 50%;
+  box-shadow: 0 0 0 0 rgba(255, 51, 68, 0.7);
+  animation: pulse-ring 1.4s infinite cubic-bezier(0.66, 0, 0, 1);
+}
+
+@keyframes pulse-ring {
+  to {
+    box-shadow: 0 0 0 16px rgba(255, 51, 68, 0);
+  }
+}
+
+.brand-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.brand-title span {
+  color: var(--danger-red);
+  font-size: 0.85rem;
+  margin-left: 6px;
+  letter-spacing: 1px;
+}
+
+.incident-badge {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+}
+
+.incident-badge span {
+  color: var(--danger-red);
+}
+
+.portal-container {
+  display: flex;
+  flex: 1;
+  height: calc(100vh - 60px);
+}
+
+.rescue-map {
+  flex: 1;
+  height: 100%;
+}
+
+.telemetry-panel {
+  width: 420px;
+  background-color: var(--panel-bg);
+  border-left: 1px solid var(--border-color);
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.card-header h2 {
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.subtitle {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.badge {
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.badge-danger {
+  background-color: rgba(255, 51, 68, 0.2);
+  color: var(--danger-red);
+  border: 1px solid var(--danger-red);
+}
+
+.badge-info {
+  background-color: rgba(0, 230, 118, 0.2);
+  color: var(--safe-green);
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.metric-box {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.metric-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: 0.5px;
+}
+
+.metric-value {
+  font-size: 1.4rem;
+  font-weight: 800;
+}
+
+.metric-value.danger {
+  color: var(--danger-red);
+}
+
+.metric-value.mono {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.05rem;
+}
+
+.metric-sub {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.medical-card h3 {
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+  color: var(--warning-amber);
+}
+
+.info-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 0.85rem;
+}
+
+.action-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.btn {
+  display: block;
+  text-align: center;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.btn-respond {
+  background-color: var(--danger-red);
+  color: white;
+  border: none;
+}
+
+.btn-directions {
+  background-color: var(--card-bg);
+  color: var(--safe-green);
+  border: 1px solid var(--safe-green);
+}
+
+@media (max-width: 900px) {
+  .portal-container {
+    flex-direction: column;
+  }
+  .telemetry-panel {
+    width: 100%;
+    height: 50%;
+  }
+}

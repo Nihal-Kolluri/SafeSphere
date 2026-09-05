@@ -1,0 +1,29 @@
+# Built files and Gradle caches
+*.iml
+.gradle/
+/build/
+/app/build/
+/captures/
+
+# Local configuration files
+local.properties
+
+# Kotlin & IDE caches
+.kotlin/
+.artifacts/
+.idea/caches/
+.idea/libraries/
+.idea/modules.xml
+.idea/workspace.xml
+.idea/navEditor.xml
+.idea/assetWizardSettings.xml
+.idea/deploymentTargetSelector.xml
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Signing files
+*.keystore
+*.jks
+*.pepk

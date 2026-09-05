@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">SafeSphere</string>
+    <string name="emergency_notification_channel">Emergency Dispatch &amp; Tracking</string>
+    <string name="emergency_notification_desc">Continuous live rescue telemetry and tiered escalation</string>
+    <string name="notification_title">🚨 SafeSphere Active Emergency</string>
+    <string name="notification_content">Broadcasting rescue telemetry. Tap to manage or cancel.</string>
+</resources>
